@@ -33,6 +33,8 @@ def get_version():
 	return [2,1,2]
 
 def configure(target, my_module):
+	if "MacOs" in target.get_type():
+		return False
 	my_module.add_src_file([
 	    'openjpeg/src/lib/openjp2/thread.c',
 	    'openjpeg/src/lib/openjp2/bio.c',
